@@ -1,0 +1,324 @@
+import os
+import re
+import json
+import shutil
+from pathlib import Path
+import subprocess
+import sqlite3
+from acw_db import ACW_DB
+from kindle_epub_fixer import EPUBFixer
+
+class LibraryConverter:
+    def __init__(self, args) -> None:
+        self.args = args
+        self.verbose = args.verbose
+
+        self.db = ACW_DB()
+        self.acw_settings = self.db.acw_settings
+        self.target_format = self.acw_settings['auto_convert_target_format']
+        self.convert_ignored_formats = self.acw_settings['auto_convert_ignored_formats']
+        self.kindle_epub_fixer = self.acw_settings['kindle_epub_fixer']
+
+        self.supported_book_formats = {'azw', 'azw3', 'azw4', 'cbz', 'cbr', 'cb7', 'cbc', 'chm', 'djvu', 'docx', 'epub', 'fb2', 'fbz', 'html', 'htmlz', 'lit', 'lrf', 'mobi', 'odt', 'pdf', 'prc', 'pdb', 'pml', 'rb', 'rtf', 'snb', 'tcr', 'txt', 'txtz'}
+        self.hierarchy_of_success = {'epub', 'lit', 'mobi', 'azw', 'azw3', 'fb2', 'fbz', 'azw4', 'prc', 'odt', 'lrf', 'pdb',  'cbz', 'pml', 'rb', 'cbr', 'cb7', 'cbc', 'chm', 'djvu', 'snb', 'tcr', 'pdf', 'docx', 'rtf', 'html', 'htmlz', 'txtz', 'txt'}
+
+        self.current_book = 1
+        self.ingest_folder, self.library_dir, self.tmp_conversion_dir = self.get_dirs(os.path.join(os.environ.get("ACW_INSTALL_DIR", "/app/autocaliweb"), "dirs.json")) 
+
+        self.calibre_env = os.environ.copy()
+        self.calibre_env["HOME"] = os.environ.get("ACW_CONFIG_DIR", "/config")
+
+        self.split_library = self.get_split_library()
+        if self.split_library:
+            self.library_dir = self.split_library['split_path']
+            self.calibre_env["CALIBRE_OVERRIDE_DATABASE_PATH"] = os.path.join(self.split_library['db_path'], 'metadata.db')
+        
+        self.to_convert = self.get_books_to_convert()
+
+    def get_split_library(self) -> dict[str, str] | None:
+        con = sqlite3.connect(os.path.join(os.environ.get("ACW_CONFIG_DIR", "/config"), "app.db"))
+        cur = con.cursor()
+        split_library = cur.execute("SELECT config_calibre_split FROM settings;").fetchone()[0]
+
+        if split_library:
+            split_path = cur.execute("SELECT config_calibre_split_dir FROM settings;").fetchone()[0]
+            db_path = cur.execute("SELECT config_calibre_dir FROM settings;").fetchone()[0]
+            con.close()
+            return {
+                "split_path": split_path,
+                "db_path": db_path
+            }
+        else:
+            con.close()
+            return None
+
+    def get_dirs(self, dirs_json_path: str) -> tuple[str, str, str]:
+        dirs = {}
+        with open(dirs_json_path, 'r') as f:
+            dirs: dict[str, str] = json.load(f)
+
+        ingest_folder = f"{dirs['ingest_folder']}/"
+        library_dir = f"{dirs['calibre_library_dir']}/"
+        tmp_conversion_dir = f"{dirs['tmp_conversion_dir']}/"
+
+        return ingest_folder, library_dir, tmp_conversion_dir
+    
+
+    def get_library_book_formats(self) -> dict[int, list[str]]:
+        """Returns a dictionary of formats for all books in the library.
+        The key is the book ID and the value is a list of format paths."""
+        try:
+            args = ["calibredb", "list", "--fields=id,formats", f"--library-path={self.library_dir}", "--for-machine"]
+            cmd = subprocess.run(
+                args,
+                env=self.calibre_env,
+                capture_output=True,
+                check=True,
+                text=True,
+                encoding='utf-8'
+            )
+
+            book_formats = {}
+            for book in json.loads(cmd.stdout):
+                book_formats[book['id']] = book['formats']
+
+        except subprocess.CalledProcessError as e:
+            print_and_log(f"[convert-library]: An error occurred while running command {' '.join(args)}: {e}")
+            return {}
+        except json.JSONDecodeError as e:
+            print_and_log(f"[convert-library]: Failed to parse \"{args[0]}\" command output as JSON: {e}")
+            print_and_log(f"[convert-library]: Raw output: {cmd.stdout}")
+            return {}
+        except Exception as e:
+            print_and_log(f"[convert-library]: Unexpected error retrieving book formats: {e}")
+            return {}
+
+        return book_formats
+
+
+    def get_books_to_convert(self):
+        """Returns a list of book format paths to convert."""
+        library_formats = self.get_library_book_formats()
+
+        # Filter out books already in the target format.
+        already_in_target_format = [id for id in library_formats for format in library_formats[id] if format.endswith(f'.{self.target_format}')]
+        books_to_convert = [id for id in library_formats if id not in already_in_target_format]
+
+        # Filter out source formats the user chose to ignore.
+        hierarchy_of_success_formats = [format for format in self.hierarchy_of_success if format not in self.convert_ignored_formats]
+
+        if self.convert_ignored_formats:
+            print_and_log(f"{', '.join(self.convert_ignored_formats)} in list of user-defined ignored formats for conversion. To change this, navigate to the CWA Settings panel from the Settings page in the Web UI.")
+
+        # Will only contain a single filepath for each book without an existing file in
+        # the target format in the format with the highest available conversion success
+        # rate, where that filepath is allow to be converted
+        to_convert = []
+
+        for book in books_to_convert:
+            book_formats = library_formats[book]
+            # If multiple formats for a book exist, only the one with the highest
+            # success rate will be converted and the rest will be left alone
+            for format in hierarchy_of_success_formats:
+                source_format = [filepath for filepath in book_formats if filepath.endswith(format)]
+                if len(source_format) > 0:
+                    to_convert.append(source_format[0])
+                    break
+
+        return to_convert
+
+
+    def backup(self, input_file, backup_type):
+        try:
+            output_path = backup_destinations[backup_type]
+            shutil.copy2(input_file, output_path)
+        except Exception as e:
+            print_and_log(f"[convert-library]: ERROR - The following error occurred when trying to copy {input_file} to {output_path}:\n{e}")
+
+
+    def convert_library(self):
+        for file in self.to_convert:
+            filename = os.path.basename(file)
+            file_extension = Path(file).suffix
+
+            print_and_log(f"[convert-library]: ({self.current_book}/{len(self.to_convert)}) Converting {filename} from {file_extension} format to {self.target_format} format...")
+
+            try: # Get Calibre Library Book ID
+                book_id = (re.search(r'\(\d*\)', file).group(0))[1:-1] # type: ignore
+            except Exception as e:
+                print_and_log(f"[convert-library]: ({self.current_book}/{len(self.to_convert)}) A Calibre Library Book ID could not be determined for {file}. Make sure the structure of your calibre library matches the following example:\n")
+                print_and_log("Terry Goodkind/")
+                print_and_log("└── Wizard's First Rule (6120)")
+                print_and_log("    ├── cover.jpg")
+                print_and_log("    ├── metadata.opf")
+                print_and_log("    └── Wizard's First Rule - Terry Goodkind.epub")
+
+                self.backup(file, backup_type="failed")
+                self.current_book += 1
+                continue
+
+            if self.target_format == "kepub":
+                convert_successful, target_filepath = self.convert_to_kepub(file, file_extension)
+                if not convert_successful:
+                    print_and_log(f"[convert-library]: ({self.current_book}/{len(self.to_convert)}) Conversion of {os.path.basename(file)} was unsuccessful. Moving to next book...")
+                    self.current_book += 1
+                    continue
+            else:
+                try: # Convert Book to target format (target is not kepub)
+                    target_filepath = f"{self.tmp_conversion_dir}{Path(file).stem}.{self.target_format}"
+                    with subprocess.Popen(
+                        ["ebook-convert", file, target_filepath],
+                        stdout=subprocess.PIPE,
+                        stderr=subprocess.STDOUT,
+                        text=True
+                    ) as process:
+                        for line in process.stdout: # Read from the combined stdout (which includes stderr)
+                            if self.verbose:
+                                print_and_log(line)
+                            else:
+                                print(line)
+
+                    if self.acw_settings['auto_backup_conversions']:
+                        self.backup(file, backup_type="converted")
+
+                    self.db.conversion_add_entry(os.path.basename(target_filepath),
+                                                Path(file).suffix,
+                                                self.target_format,
+                                                str(self.acw_settings["auto_backup_conversions"]))
+
+                    print_and_log(f"[convert-library]: ({self.current_book}/{len(self.to_convert)}) Conversion of {os.path.basename(file)} to {self.target_format} format successful!") # Removed as of V3.0.0 - Removing old version from library...
+                except subprocess.CalledProcessError as e:
+                    print_and_log(f"[convert-library]: ({self.current_book}/{len(self.to_convert)}) Conversion of {os.path.basename(file)} was unsuccessful. See the following error:\n{e}")
+                    self.current_book += 1
+                    continue
+
+            if self.target_format == "epub" and self.kindle_epub_fixer:
+                try:
+                    EPUBFixer().process(input_path=target_filepath)
+                    print_and_log(f"[convert-library]: ({self.current_book}/{len(self.to_convert)}) Resulting EPUB file successfully processed by ACW-EPUB-Fixer!")
+                except Exception as e:
+                    print_and_log(f"[convert-library]: ({self.current_book}/{len(self.to_convert)}) An error occurred while processing {os.path.basename(target_filepath)} with the kindle-epub-fixer. See the following error:\n{e}")
+
+            try: # Import converted book to library. As of V3.0.0, "add_format" is used instead of "add"
+                with subprocess.Popen(
+                    ["calibredb", "add_format", book_id, target_filepath, f"--library-path={self.library_dir}"],
+                    env=self.calibre_env,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.STDOUT,
+                    text=True
+                ) as process:
+                    for line in process.stdout: # Read from the combined stdout (which includes stderr)
+                        if self.verbose:
+                            print_and_log(line)
+                        else:
+                            print(line)
+
+                if self.acw_settings['auto_backup_imports']:
+                    self.backup(target_filepath, backup_type="imported")
+
+                self.db.import_add_entry(os.path.basename(target_filepath),
+                                        str(self.acw_settings["auto_backup_imports"]))
+
+                print_and_log(f"[convert-library]: ({self.current_book}/{len(self.to_convert)}) Import of {os.path.basename(target_filepath)} successfully completed!")
+            except subprocess.CalledProcessError as e:
+                print_and_log(f"[convert-library]: ({self.current_book}/{len(self.to_convert)}) Import of {os.path.basename(target_filepath)} was not successfully completed. Converted file moved to {os.path.join(os.environ.get('ACW_CONFIG_DIR', '/config'), 'processed_books', 'failed', os.path.basename(target_filepath))}. See the following error:\n{e}")
+                try:
+                    output_path = os.path.join(os.environ.get('ACW_CONFIG_DIR', '/config'), 'processed_books', 'failed', os.path.basename(target_filepath))
+                    shutil.move(target_filepath, output_path)
+                except Exception as e:
+                    print_and_log(f"[convert-library]: ERROR - The following error occurred when trying to copy {file} to {output_path}:\n{e}")
+                self.current_book += 1
+                continue
+
+            self.set_library_permissions()
+            self.empty_tmp_con_dir()
+            self.current_book += 1
+            continue
+
+
+    def convert_to_kepub(self, filepath:str ,import_format:str) -> tuple[bool, str]:
+        """Kepubify is limited in that it can only convert from epub to kepub, therefore any files not already in epub need to first be converted to epub, and then to kepub"""
+        if import_format == "epub":
+            print_and_log(f"[convert-library]: ({self.current_book}/{len(self.to_convert)}) File already in epub format, converting directly to kepub...")
+
+            if self.acw_settings['auto_backup_conversions']:
+                self.backup(filepath, backup_type="converted")
+
+            epub_filepath = filepath
+            epub_ready = True
+        else:
+            print_and_log(f"\n[convert-library]: ({self.current_book}/{len(self.to_convert)}) *** NOTICE TO USER: Kepubify is limited in that it can only convert from epubs. To get around this, ACW will automatically convert other supported formats to epub using the Calibre's conversion tools & then use Kepubify to produce your desired kepubs. Obviously multi-step conversions aren't ideal so if you notice issues with your converted files, bare in mind starting with epubs will ensure the best possible results***\n")
+            try: # Convert book to epub format so it can then be converted to kepub
+                epub_filepath = f"{self.tmp_conversion_dir}{Path(filepath).stem}.epub"
+                with subprocess.Popen(
+                    ["ebook-convert", filepath, epub_filepath],
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.STDOUT,
+                    text=True
+                ) as process:
+                    for line in process.stdout: # Read from the combined stdout (which includes stderr)
+                        if self.verbose:
+                            print_and_log(line)
+                        else:
+                            print(line)
+
+                if self.acw_settings['auto_backup_conversions']:
+                    self.backup(filepath, backup_type="converted")
+
+                print_and_log(f"[convert-library]: ({self.current_book}/{len(self.to_convert)}) Intermediate conversion of {os.path.basename(filepath)} to epub from {import_format} successful, now converting to kepub...")
+                epub_ready = True
+            except subprocess.CalledProcessError as e:
+                print_and_log(f"[convert-library]: ({self.current_book}/{len(self.to_convert)}) Intermediate conversion of {os.path.basename(filepath)} to epub was unsuccessful. Cancelling kepub conversion and moving on to next file. See the following error:\n{e}")
+                return False, ""
+            
+        if epub_ready:
+            epub_filepath = Path(epub_filepath)
+            target_filepath = f"{self.tmp_conversion_dir}{epub_filepath.stem}.kepub"
+            try:
+                with subprocess.Popen(
+                    ['kepubify', '--inplace', '--calibre', '--output', self.tmp_conversion_dir, epub_filepath],
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.STDOUT,
+                    text=True
+                ) as process:
+                    for line in process.stdout: # Read from the combined stdout (which includes stderr)
+                        if self.verbose:
+                            print_and_log(line)
+                        else:
+                            print(line)
+
+                if self.acw_settings['auto_backup_conversions']:
+                    self.backup(filepath, backup_type="converted")
+
+                self.db.conversion_add_entry(epub_filepath.stem,
+                                            import_format,
+                                            self.target_format,
+                                            str(self.acw_settings["auto_backup_conversions"]))
+
+                return True, target_filepath
+            except subprocess.CalledProcessError as e:
+                print_and_log(f"[convert-library]: ({self.current_book}/{len(self.to_convert)}) CON_ERROR: {os.path.basename(filepath)} could not be converted to kepub due to the following error:\nEXIT/ERROR CODE: {e.returncode}\n{e.stderr}")
+                self.backup(epub_filepath, backup_type="failed")
+                return False, ""
+        else:
+            print_and_log(f"[convert-library]: ({self.current_book}/{len(self.to_convert)}) An error occurred when converting the original {import_format} to epub. Cancelling kepub conversion and moving on to next file...")
+            return False, ""
+
+
+    def empty_tmp_con_dir(self):
+        try:
+            files = os.listdir(self.tmp_conversion_dir)
+            for file in files:
+                file_path = os.path.join(self.tmp_conversion_dir, file)
+                if os.path.isfile(file_path):
+                    os.remove(file_path)
+        except OSError:
+            print_and_log(f"[convert-library]: ({self.current_book}/{len(self.to_convert)}) An error occurred while emptying {self.tmp_conversion_dir}.")
+
+
+    def set_library_permissions(self):
+        try:
+            subprocess.run(["chown", "-R", owner_group_string, self.library_dir], check=True)
+            print_and_log(f"[convert-library]: ({self.current_book}/{len(self.to_convert)}) Successfully set ownership of new files in {self.library_dir} to owner_group_string.")
+        except subprocess.CalledProcessError as e:
+            print_and_log(f"[convert-library]: ({self.current_book}/{len(self.to_convert)}) An error occurred while attempting to recursively set ownership of {self.library_dir} to owner_group_string. See the following error:\n{e}")

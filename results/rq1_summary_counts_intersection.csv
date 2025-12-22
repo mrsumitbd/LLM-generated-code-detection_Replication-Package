@@ -1,0 +1,9 @@
+Model,Granularity,Total Features,Significant (corrected),Significant + Non-Negligible
+claude-3-haiku,function,18,18,3
+claude-4-5-haiku,function,18,17,13
+gpt-3-5,function,18,18,17
+gpt-oss,function,18,18,18
+claude-3-haiku,class,39,36,23
+claude-4-5-haiku,class,39,21,2
+gpt-3-5,class,39,36,29
+gpt-oss,class,39,36,9

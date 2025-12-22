@@ -1,0 +1,7 @@
+Metric,Value
+Avg Function-level Jaccard (cross-model),0.6904761904761904
+Avg Class-level Jaccard (cross-model),0.8545454545454546
+Avg Cross-granularity Jaccard (within-model),0.09910714285714284
+Universal Features Count,1
+Highly Common Features Count,1
+Function-level Perfect Overlap,No

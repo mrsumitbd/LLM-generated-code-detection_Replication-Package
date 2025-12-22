@@ -1,0 +1,229 @@
+llm,granularity,feature,feature_full_name,p_value,cliff_delta,effect_size,direction,human_median,llm_median,human_mean,llm_mean,significant_corrected,significant_uncorrected
+claude-3-haiku,function,CountLine,Lines,1.1268496418967451e-208,-0.20905723118996727,Small,↓,20.0,15.0,28.8416983085951,19.07973765964791,True,True
+claude-3-haiku,function,CountLineBlank,Blank Lines,8.149888481315138e-64,-0.11230012979277362,Negligible,↓,2.0,2.0,3.5558163617535383,2.324404556437694,True,True
+claude-3-haiku,function,CountLineCode,Code Lines,6.493392831742706e-96,-0.14078923014285546,Negligible,↓,10.0,9.0,15.952088367276493,10.924404556437695,True,True
+claude-3-haiku,function,CountLineCodeDecl,Declarative Code Lines,2.4546697702829396e-20,-0.0620942831960836,Negligible,↓,3.0,3.0,4.876423886779427,4.117017604418364,True,True
+claude-3-haiku,function,CountLineCodeExe,Executable Code Lines,6.995729465640848e-110,-0.15087824537042058,Small,↓,9.0,8.0,14.58570935450466,9.47096996893338,True,True
+claude-3-haiku,function,CountLineComment,Comment Lines,0.0,-0.2538085927749047,Small,↓,6.0,3.0,9.565964791163273,5.896168450120815,True,True
+claude-3-haiku,function,CountPath,Paths,2.2826345182204942e-36,-0.08399155495031402,Negligible,↓,3.0,2.0,932493.1464273386,4834.670693821195,True,True
+claude-3-haiku,function,CountPathLog,Paths Log(x),9.19276961769287e-46,-0.08230976088603675,Negligible,↓,0.0,0.0,0.5551950293406973,0.3893683120469451,True,True
+claude-3-haiku,function,CountStmt,Statements,6.939951442150419e-62,-0.11239508953651957,Negligible,↓,8.0,8.0,12.569899896444598,9.10693821194339,True,True
+claude-3-haiku,function,CountStmtDecl,Declarative Statements,3.238476255684626e-28,-0.07387438637973007,Negligible,↓,3.0,3.0,4.489609941318605,3.707904729030031,True,True
+claude-3-haiku,function,CountStmtExe,Executable Statements,6.336602034244378e-74,-0.12314062528112533,Negligible,↓,7.0,6.0,11.471591301346221,7.903762512944425,True,True
+claude-3-haiku,function,Cyclomatic,Cyclomatic Complexity,4.885370913726437e-39,-0.08708226964940223,Negligible,↓,3.0,2.0,3.959889540904384,3.100931998619261,True,True
+claude-3-haiku,function,CyclomaticModified,Modified Cyclomatic Complexity,4.885370913726437e-39,-0.08708226964940223,Negligible,↓,3.0,2.0,3.959889540904384,3.100931998619261,True,True
+claude-3-haiku,function,CyclomaticStrict,Strict Cyclomatic Complexity,1.5438510404426637e-52,-0.10185288984629214,Negligible,↓,3.0,3.0,4.375146703486365,3.29299275112185,True,True
+claude-3-haiku,function,CyclomaticStrictModified,Strict Modified Cyclomatic Complexity,1.5438510404426637e-52,-0.10185288984629214,Negligible,↓,3.0,3.0,4.375146703486365,3.29299275112185,True,True
+claude-3-haiku,function,Essential,Essential Complexity,5.392497676091873e-30,-0.05720258861100285,Negligible,↓,1.0,1.0,1.9944770452191922,1.690645495340007,True,True
+claude-3-haiku,function,MaxNesting,Max Nesting,3.80724662223796e-08,-0.035830688645211516,Negligible,↓,1.0,1.0,1.4111839834311357,1.3117017604418364,True,True
+claude-3-haiku,function,RatioCommentToCode,Comment to Code Ratio,3.225324774166284e-92,-0.13815044165646226,Negligible,↓,0.52,0.42,0.9595754228512254,0.7416872626855368,True,True
+claude-4-5-haiku,function,CountLine,Lines,1.7280387553298375e-207,0.2085004555794271,Small,↑,20.0,29.0,28.8416983085951,35.79426993441491,True,True
+claude-4-5-haiku,function,CountLineBlank,Blank Lines,0.0,0.3749434103268721,Medium,↑,2.0,5.0,3.5558163617535383,6.255781843286158,True,True
+claude-4-5-haiku,function,CountLineCode,Code Lines,2.391626962176588e-257,0.23232723936025138,Small,↑,10.0,16.0,15.952088367276493,20.952709699689333,True,True
+claude-4-5-haiku,function,CountLineCodeDecl,Declarative Code Lines,0.0,0.2918775746612287,Small,↑,3.0,6.0,4.876423886779427,7.279668622713151,True,True
+claude-4-5-haiku,function,CountLineCodeExe,Executable Code Lines,4.7890066687740795e-173,0.19011729010609216,Small,↑,9.0,13.0,14.58570935450466,18.46606834656541,True,True
+claude-4-5-haiku,function,CountLineComment,Comment Lines,0.046866614483055694,-0.01343277162083924,Negligible,↓,6.0,6.0,9.565964791163273,8.725992405937177,False,False
+claude-4-5-haiku,function,CountPath,Paths,4.902421090205341e-106,0.1467861829378683,Negligible,↑,3.0,4.0,932493.1464273386,208055.06523990334,True,True
+claude-4-5-haiku,function,CountPathLog,Paths Log(x),2.1278260582617558e-113,0.1380002904936951,Negligible,↑,0.0,1.0,0.5551950293406973,0.7319986192613048,True,True
+claude-4-5-haiku,function,CountStmt,Statements,7.408592597855236e-260,0.2333806471861134,Small,↑,8.0,13.0,12.569899896444598,16.44943044528823,True,True
+claude-4-5-haiku,function,CountStmtDecl,Declarative Statements,0.0,0.3031603402469959,Small,↑,3.0,5.0,4.489609941318605,6.802485329651364,True,True
+claude-4-5-haiku,function,CountStmtExe,Executable Statements,3.761412973050876e-154,0.17923242700809724,Small,↑,7.0,10.0,11.471591301346221,14.251501553331032,True,True
+claude-4-5-haiku,function,Cyclomatic,Cyclomatic Complexity,6.731775972974083e-125,0.1594380865354266,Small,↑,3.0,4.0,3.959889540904384,4.954366586123576,True,True
+claude-4-5-haiku,function,CyclomaticModified,Modified Cyclomatic Complexity,6.731775972974083e-125,0.1594380865354266,Small,↑,3.0,4.0,3.959889540904384,4.954366586123576,True,True
+claude-4-5-haiku,function,CyclomaticStrict,Strict Cyclomatic Complexity,1.800327405828276e-107,0.14791443757239256,Small,↑,3.0,4.0,4.375146703486365,5.418985157059026,True,True
+claude-4-5-haiku,function,CyclomaticStrictModified,Strict Modified Cyclomatic Complexity,1.800327405828276e-107,0.14791443757239256,Small,↑,3.0,4.0,4.375146703486365,5.418985157059026,True,True
+claude-4-5-haiku,function,Essential,Essential Complexity,2.6880381920744158e-46,0.0778672377087983,Negligible,↓,1.0,1.0,1.9944770452191922,2.3962720055229547,True,True
+claude-4-5-haiku,function,MaxNesting,Max Nesting,6.319903158199586e-84,0.12755395610590223,Negligible,↓,1.0,1.0,1.4111839834311357,1.7739040386606835,True,True
+claude-4-5-haiku,function,RatioCommentToCode,Comment to Code Ratio,5.965357123962394e-178,-0.19293428301020576,Small,↓,0.52,0.37,0.9595754228512254,0.5961960648947187,True,True
+gpt-3-5,function,CountLine,Lines,0.0,-0.6847554651956262,Large,↓,20.0,7.0,28.8416983085951,9.078356920952709,True,True
+gpt-3-5,function,CountLineBlank,Blank Lines,0.0,-0.41563043387342363,Medium,↓,2.0,0.0,3.5558163617535383,1.0275457369692786,True,True
+gpt-3-5,function,CountLineCode,Code Lines,0.0,-0.49264505471421344,Large,↓,10.0,5.0,15.952088367276493,6.870693821194339,True,True
+gpt-3-5,function,CountLineCodeDecl,Declarative Code Lines,0.0,-0.3626385978424588,Medium,↓,3.0,2.0,4.876423886779427,2.862823610631688,True,True
+gpt-3-5,function,CountLineCodeExe,Executable Code Lines,0.0,-0.506091347756103,Large,↓,9.0,4.0,14.58570935450466,5.552019330341733,True,True
+gpt-3-5,function,CountLineComment,Comment Lines,0.0,-0.8113504346502977,Large,↓,6.0,0.0,9.565964791163273,1.2209872281670693,True,True
+gpt-3-5,function,CountPath,Paths,0.0,-0.349778458641407,Medium,↓,3.0,1.0,932493.1464273386,27.745322747670002,True,True
+gpt-3-5,function,CountPathLog,Paths Log(x),0.0,-0.23378273907434505,Small,↓,0.0,0.0,0.5551950293406973,0.20690369347600968,True,True
+gpt-3-5,function,CountStmt,Statements,0.0,-0.4627714361529293,Medium,↓,8.0,4.0,12.569899896444598,5.967759751467035,True,True
+gpt-3-5,function,CountStmtDecl,Declarative Statements,0.0,-0.37283424022255773,Medium,↓,3.0,2.0,4.489609941318605,2.5897825336555056,True,True
+gpt-3-5,function,CountStmtExe,Executable Statements,0.0,-0.467100759727994,Medium,↓,7.0,3.0,11.471591301346221,4.849499482222989,True,True
+gpt-3-5,function,Cyclomatic,Cyclomatic Complexity,0.0,-0.3551844438362373,Medium,↓,3.0,1.0,3.959889540904384,2.1711425612702797,True,True
+gpt-3-5,function,CyclomaticModified,Modified Cyclomatic Complexity,0.0,-0.3551844438362373,Medium,↓,3.0,1.0,3.959889540904384,2.1711425612702797,True,True
+gpt-3-5,function,CyclomaticStrict,Strict Cyclomatic Complexity,0.0,-0.3670027520643461,Medium,↓,3.0,1.0,4.375146703486365,2.290507421470487,True,True
+gpt-3-5,function,CyclomaticStrictModified,Strict Modified Cyclomatic Complexity,0.0,-0.3670027520643461,Medium,↓,3.0,1.0,4.375146703486365,2.290507421470487,True,True
+gpt-3-5,function,Essential,Essential Complexity,1.3258162589242713e-204,-0.14206689242880252,Negligible,↓,1.0,1.0,1.9944770452191922,1.379288919571971,True,True
+gpt-3-5,function,MaxNesting,Max Nesting,0.0,-0.32311703309423806,Small,↓,1.0,0.0,1.4111839834311357,0.7702450811183983,True,True
+gpt-3-5,function,RatioCommentToCode,Comment to Code Ratio,0.0,-0.5566370600608226,Large,↓,0.52,0.0,0.9595754228512254,0.45401104590956165,True,True
+gpt-oss,function,CountLine,Lines,0.0,0.40580032264102855,Medium,↑,20.0,38.0,28.8416983085951,42.94981014842941,True,True
+gpt-oss,function,CountLineBlank,Blank Lines,0.0,0.3618447803299308,Medium,↑,2.0,5.0,3.5558163617535383,5.308664135312392,True,True
+gpt-oss,function,CountLineCode,Code Lines,0.0,0.31596779023066607,Small,↑,10.0,18.0,15.952088367276493,21.77694166379013,True,True
+gpt-oss,function,CountLineCodeDecl,Declarative Code Lines,0.0,0.2726881616908401,Small,↑,3.0,5.0,4.876423886779427,6.901484294097342,True,True
+gpt-oss,function,CountLineCodeExe,Executable Code Lines,0.0,0.3120310740080945,Small,↑,9.0,16.0,14.58570935450466,20.004487400759405,True,True
+gpt-oss,function,CountLineComment,Comment Lines,0.0,0.45422606009644917,Medium,↑,6.0,15.0,9.565964791163273,16.124956851915776,True,True
+gpt-oss,function,CountPath,Paths,0.0,0.31843606678209363,Small,↑,3.0,6.0,932493.1464273386,101547.39330341732,True,True
+gpt-oss,function,CountPathLog,Paths Log(x),0.0,0.281527615548395,Small,↑,0.0,1.0,0.5551950293406973,0.9339316534345875,True,True
+gpt-oss,function,CountStmt,Statements,0.0,0.34452302972770443,Medium,↑,8.0,15.0,12.569899896444598,18.161408353469106,True,True
+gpt-oss,function,CountStmtDecl,Declarative Statements,0.0,0.2620411697959478,Small,↑,3.0,5.0,4.489609941318605,6.230100103555402,True,True
+gpt-oss,function,CountStmtExe,Executable Statements,0.0,0.33908612208670746,Medium,↑,7.0,14.0,11.471591301346221,16.80745598895409,True,True
+gpt-oss,function,Cyclomatic,Cyclomatic Complexity,0.0,0.3067096298659928,Small,↑,3.0,5.0,3.959889540904384,5.562927166033828,True,True
+gpt-oss,function,CyclomaticModified,Modified Cyclomatic Complexity,0.0,0.3067096298659928,Small,↑,3.0,5.0,3.959889540904384,5.562927166033828,True,True
+gpt-oss,function,CyclomaticStrict,Strict Cyclomatic Complexity,0.0,0.29891489523698767,Small,↑,3.0,5.0,4.375146703486365,6.083258543320676,True,True
+gpt-oss,function,CyclomaticStrictModified,Strict Modified Cyclomatic Complexity,0.0,0.29891489523698767,Small,↑,3.0,5.0,4.375146703486365,6.083258543320676,True,True
+gpt-oss,function,Essential,Essential Complexity,0.0,0.29456093569949465,Small,↑,1.0,3.0,1.9944770452191922,3.3523645150155335,True,True
+gpt-oss,function,MaxNesting,Max Nesting,1.0902454659549109e-209,0.2023891116576502,Small,↑,1.0,2.0,1.4111839834311357,1.825060407317915,True,True
+gpt-oss,function,RatioCommentToCode,Comment to Code Ratio,2.1851360308051495e-219,0.2144719621752902,Small,↑,0.52,0.76,0.9595754228512254,0.9741601656886434,True,True
+claude-3-haiku,class,AvgCountLine,Average Lines,0.0,-0.29793674894827227,Small,↓,8.0,5.0,9.901536136993201,5.91244858557878,True,True
+claude-3-haiku,class,AvgCountLineBlank,Average Blank Lines,1.322084265255312e-170,-0.12665168113637662,Negligible,↓,0.0,0.0,0.2872492235373122,0.11743473516326702,True,True
+claude-3-haiku,class,AvgCountLineCode,Average Code Lines,0.0,-0.31426518776984164,Small,↓,6.0,4.0,7.844203810962814,4.530848652732309,True,True
+claude-3-haiku,class,AvgCountLineComment,Average Comment Lines,1.1434698784501243e-59,-0.11266035482393552,Negligible,↓,1.0,0.0,1.8018970872156468,1.2916981448837404,True,True
+claude-3-haiku,class,AvgCyclomatic,Average Cyclomatic Complexity,0.0,-0.31535500224074103,Small,↓,2.0,1.0,2.403928481490808,1.4870309745656005,True,True
+claude-3-haiku,class,AvgCyclomaticModified,Average Modified Cyclomatic Complexity,0.0,-0.31529724417356425,Small,↓,2.0,1.0,2.403340888105431,1.4870309745656005,True,True
+claude-3-haiku,class,AvgCyclomaticStrict,Average Strict Cyclomatic Complexity,0.0,-0.3228488313687029,Small,↓,2.0,1.0,2.6356921010660623,1.5663560815915387,True,True
+claude-3-haiku,class,AvgCyclomaticStrictModified,Average Strict Modified Cyclomatic Complexity,0.0,-0.322789262416658,Small,↓,2.0,1.0,2.635104507680685,1.5663560815915387,True,True
+claude-3-haiku,class,AvgEssential,Average Essential Complexity,3.4610919936839434e-164,-0.16264954271387339,Small,↓,1.0,1.0,1.4109796021153362,1.0983799210946026,True,True
+claude-3-haiku,class,CountClassBase,Base Classes,0.08832096193691825,0.003692866344598327,Negligible,↓,0.0,0.0,0.028540250146898347,0.032317636195752536,False,False
+claude-3-haiku,class,CountClassCoupled,Coupled Classes,2.536163036240732e-124,-0.1738681506283323,Small,↓,2.0,1.0,2.6946193234281877,1.8289263829430034,True,True
+claude-3-haiku,class,CountClassCoupledModified,Coupled Classes Modified,3.1353998255853195e-240,0.09539967669997645,Negligible,↓,0.0,0.0,0.005036514731805591,0.1782926215059179,True,True
+claude-3-haiku,class,CountClassDerived,Derived Classes,0.03881178331155487,0.0007557238283326523,Negligible,↓,0.0,0.0,0.0004197095609837992,0.0025182573659027953,False,False
+claude-3-haiku,class,CountDeclInstanceMethod,Instance Methods,3.737744263857728e-13,0.05413529687368202,Negligible,↓,4.0,4.0,5.863594392680265,6.118609921934022,True,True
+claude-3-haiku,class,CountDeclInstanceVariable,Instance Variables,0.0003488054347003208,-0.026376017249601428,Negligible,↓,2.0,2.0,3.6362796944514395,2.9197515319398977,True,True
+claude-3-haiku,class,CountDeclMethod,Methods,1.814003474453565e-15,0.05929591711203689,Negligible,↑,4.0,5.0,6.352639973138588,6.631327121631831,True,True
+claude-3-haiku,class,CountDeclMethodAll,All Methods,8.60458973373596e-16,0.05998052319338709,Negligible,↑,4.0,5.0,6.356081591538655,6.63963737093931,True,True
+claude-3-haiku,class,CountLine,Lines,7.186598454626156e-103,-0.1610990095382829,Small,↓,49.0,37.0,83.60908251489968,48.75858306052212,True,True
+claude-3-haiku,class,CountLineBlank,Blank Lines,5.250938700647528e-26,-0.07871471903920452,Negligible,↓,6.0,5.0,9.153529757407874,6.867119952992529,True,True
+claude-3-haiku,class,CountLineCode,Code Lines,4.953139197951286e-127,-0.1793393481909461,Small,↓,32.0,24.0,57.715101150004195,30.64660454965164,True,True
+claude-3-haiku,class,CountLineCodeDecl,Declarative Code Lines,8.616574280530943e-103,-0.16096190371040375,Small,↓,16.0,12.0,24.103332493914213,15.477209770838579,True,True
+claude-3-haiku,class,CountLineCodeExe,Executable Code Lines,7.776773422478155e-197,-0.2238601076924071,Small,↓,25.0,16.0,48.72064131620918,21.570553177201376,True,True
+claude-3-haiku,class,CountLineComment,Comment Lines,3.3173261814944515e-58,-0.11964446566209626,Negligible,↓,6.0,4.0,16.845966591118945,11.309242004532864,True,True
+claude-3-haiku,class,CountStmt,Statements,3.953265685366149e-189,-0.219401476620888,Small,↓,30.0,21.0,54.135650130109966,26.691597414589104,True,True
+claude-3-haiku,class,CountStmtDecl,Declarative Statements,6.839255303773987e-116,-0.17108179774700416,Small,↓,14.0,11.0,22.26576009401494,13.936372030554857,True,True
+claude-3-haiku,class,CountStmtExe,Executable Statements,4.0207496340298214e-281,-0.2679544073305352,Small,↓,24.0,14.0,46.51145807101486,18.979182405775205,True,True
+claude-3-haiku,class,MaxCyclomatic,Max Cyclomatic Complexity,0.0,-0.3061728365310918,Small,↓,4.0,2.0,5.216654075379837,2.5416771594056913,True,True
+claude-3-haiku,class,MaxCyclomaticModified,Max Modified Cyclomatic Complexity,0.0,-0.3060590960503833,Small,↓,4.0,2.0,5.2148073533115085,2.5416771594056913,True,True
+claude-3-haiku,class,MaxCyclomaticStrict,Max Strict Cyclomatic Complexity,0.0,-0.31005862200723,Small,↓,4.0,2.0,5.9456056408965,2.7516158818097876,True,True
+claude-3-haiku,class,MaxCyclomaticStrictModified,Max Strict Modified Cyclomatic Complexity,0.0,-0.309939019050995,Small,↓,4.0,2.0,5.943758918828171,2.7516158818097876,True,True
+claude-3-haiku,class,MaxEssential,Max Essential Complexity,4.428527756320179e-219,-0.20837311731125677,Small,↓,1.0,1.0,2.845882649206749,1.5950642155628305,True,True
+claude-3-haiku,class,MaxInheritanceTree,Max Inheritance Tree,0.08765209266302683,0.0037006453986623933,Negligible,↓,0.0,0.0,0.027784772937127507,0.03206581045916226,False,False
+claude-3-haiku,class,MaxNesting,Max Nesting,5.3339428348105806e-254,-0.24609940155610252,Small,↓,2.0,1.0,1.7354990346680097,1.0729455216989843,True,True
+claude-3-haiku,class,RatioCommentToCode,Comment to Code Ratio,0.000944326030535765,-0.024627970790976682,Negligible,↓,0.23,0.21,0.365594728447914,0.4089339377151012,True,True
+claude-3-haiku,class,SumCyclomatic,Sum Cyclomatic Complexity,7.537943559495618e-80,-0.14140422030171187,Negligible,↓,10.0,7.0,17.036682615629985,9.815915386552506,True,True
+claude-3-haiku,class,SumCyclomaticModified,Sum Modified Cyclomatic Complexity,9.778231566515746e-80,-0.141301690396199,Negligible,↓,10.0,7.0,17.03315705531772,9.815915386552506,True,True
+claude-3-haiku,class,SumCyclomaticStrict,Sum Strict Cyclomatic Complexity,9.22018942983165e-93,-0.1526824746769066,Small,↓,10.0,8.0,18.70418870141862,10.256442541761102,True,True
+claude-3-haiku,class,SumCyclomaticStrictModified,Sum Strict Modified Cyclomatic Complexity,1.1926934106224405e-92,-0.15258849186612172,Small,↓,10.0,8.0,18.700663141106354,10.256442541761102,True,True
+claude-3-haiku,class,SumEssential,Sum Essential Complexity,5.66624658129268e-11,-0.048915847538967654,Negligible,↓,6.0,5.0,10.010492739024595,7.554520271971795,True,True
+claude-4-5-haiku,class,AvgCountLine,Average Lines,2.0425223847118316e-20,0.06916697301976728,Negligible,↓,8.0,8.0,9.901536136993201,10.551834130781499,True,True
+claude-4-5-haiku,class,AvgCountLineBlank,Average Blank Lines,0.0,0.3022085558898505,Small,↓,0.0,0.0,0.2872492235373122,1.0214891295223705,True,True
+claude-4-5-haiku,class,AvgCountLineCode,Average Code Lines,1.0338472739931718e-07,0.039690995679390766,Negligible,↓,6.0,6.0,7.844203810962814,7.61840006715353,True,True
+claude-4-5-haiku,class,AvgCountLineComment,Average Comment Lines,4.085974416488664e-13,0.0515583231513337,Negligible,↓,1.0,1.0,1.8018970872156468,1.9952153110047848,True,True
+claude-4-5-haiku,class,AvgCyclomatic,Average Cyclomatic Complexity,0.9588316683306604,0.0003747545202874735,Negligible,↓,2.0,2.0,2.403928481490808,2.2937966926886593,False,False
+claude-4-5-haiku,class,AvgCyclomaticModified,Average Modified Cyclomatic Complexity,0.9434160771276223,0.0005152777768089191,Negligible,↓,2.0,2.0,2.403340888105431,2.2937966926886593,False,False
+claude-4-5-haiku,class,AvgCyclomaticStrict,Average Strict Cyclomatic Complexity,0.2725745619504981,-0.008005259655206534,Negligible,↓,2.0,2.0,2.6356921010660623,2.4647024259212627,False,False
+claude-4-5-haiku,class,AvgCyclomaticStrictModified,Average Strict Modified Cyclomatic Complexity,0.2804540134877448,-0.00787493231465493,Negligible,↓,2.0,2.0,2.635104507680685,2.4647024259212627,False,False
+claude-4-5-haiku,class,AvgEssential,Average Essential Complexity,0.00530771256550187,-0.017649144636283386,Negligible,↓,1.0,1.0,1.4109796021153362,1.3553261143288844,False,True
+claude-4-5-haiku,class,CountClassBase,Base Classes,0.6067816747066772,0.0010904204479369579,Negligible,↓,0.0,0.0,0.028540250146898347,0.029631495005456223,False,False
+claude-4-5-haiku,class,CountClassCoupled,Coupled Classes,0.0012023895257571656,-0.02388156914428059,Negligible,↓,2.0,2.0,2.6946193234281877,2.4322169059011163,False,True
+claude-4-5-haiku,class,CountClassCoupledModified,Coupled Classes Modified,1.837245324172001e-74,0.03453246817568901,Negligible,↓,0.0,0.0,0.005036514731805591,0.061277595903634685,True,True
+claude-4-5-haiku,class,CountClassDerived,Derived Classes,0.40507830709421766,0.00025193143025962827,Negligible,↓,0.0,0.0,0.0004197095609837992,0.0012591286829513977,False,False
+claude-4-5-haiku,class,CountDeclInstanceMethod,Instance Methods,7.097322690880362e-21,0.06985768819520584,Negligible,↑,4.0,5.0,5.863594392680265,6.338369848065139,True,True
+claude-4-5-haiku,class,CountDeclInstanceVariable,Instance Variables,4.300325739142104e-06,0.033928640242699724,Negligible,↓,2.0,2.0,3.6362796944514395,3.51657852765886,True,True
+claude-4-5-haiku,class,CountDeclMethod,Methods,1.3533473835908236e-24,0.07632836737264893,Negligible,↑,4.0,5.0,6.352639973138588,6.857298749265508,True,True
+claude-4-5-haiku,class,CountDeclMethodAll,All Methods,1.1059160403718968e-24,0.07647402029525611,Negligible,↑,4.0,5.0,6.356081591538655,6.861999496348527,True,True
+claude-4-5-haiku,class,CountLine,Lines,1.1062842415026117e-28,0.08311938292315417,Negligible,↑,49.0,60.0,83.60908251489968,82.40703433224209,True,True
+claude-4-5-haiku,class,CountLineBlank,Blank Lines,3.2188372553286614e-198,0.22441435120198258,Small,↑,6.0,9.0,9.153529757407874,12.720305548560397,True,True
+claude-4-5-haiku,class,CountLineCode,Code Lines,7.971685267535087e-18,0.06433117056605492,Negligible,↑,32.0,38.0,57.715101150004195,52.834382607235796,True,True
+claude-4-5-haiku,class,CountLineCodeDecl,Declarative Code Lines,3.628257386164082e-05,0.030885254450004708,Negligible,↑,16.0,17.0,24.103332493914213,22.356669184924034,True,True
+claude-4-5-haiku,class,CountLineCodeExe,Executable Code Lines,1.792535171686811e-12,0.05273231910674701,Negligible,↑,25.0,30.0,48.72064131620918,42.629480399563505,True,True
+claude-4-5-haiku,class,CountLineComment,Comment Lines,2.2421356411439906e-06,0.035267574692254035,Negligible,↑,6.0,7.0,16.845966591118945,16.98782842273147,True,True
+claude-4-5-haiku,class,CountStmt,Statements,0.37526122634971837,0.006632425722769775,Negligible,↑,30.0,32.0,54.135650130109966,44.36187358348023,False,False
+claude-4-5-haiku,class,CountStmtDecl,Declarative Statements,2.3618895286564536e-05,0.03161351906304056,Negligible,↑,14.0,15.0,22.26576009401494,20.573407202216067,True,True
+claude-4-5-haiku,class,CountStmtExe,Executable Statements,0.056556976825422614,-0.014261951429686205,Negligible,↓,24.0,24.0,46.51145807101486,35.581717451523545,False,False
+claude-4-5-haiku,class,MaxCyclomatic,Max Cyclomatic Complexity,0.8532537490651062,0.001375715846487668,Negligible,↓,4.0,4.0,5.216654075379837,4.477545538487367,False,False
+claude-4-5-haiku,class,MaxCyclomaticModified,Max Modified Cyclomatic Complexity,0.8312210139182745,0.0015852077453814702,Negligible,↓,4.0,4.0,5.2148073533115085,4.477545538487367,False,False
+claude-4-5-haiku,class,MaxCyclomaticStrict,Max Strict Cyclomatic Complexity,0.399528505303849,-0.006272644472306705,Negligible,↓,4.0,4.0,5.9456056408965,4.941408545286662,False,False
+claude-4-5-haiku,class,MaxCyclomaticStrictModified,Max Strict Modified Cyclomatic Complexity,0.41516136452854624,-0.0060669927767325734,Negligible,↓,4.0,4.0,5.943758918828171,4.941408545286662,False,False
+claude-4-5-haiku,class,MaxEssential,Max Essential Complexity,0.0035526078049499363,-0.02014512177668747,Negligible,↓,1.0,1.0,2.845882649206749,2.4458154956769915,False,True
+claude-4-5-haiku,class,MaxInheritanceTree,Max Inheritance Tree,0.6059394700088869,0.001092971188490574,Negligible,↓,0.0,0.0,0.027784772937127507,0.029043901620078905,False,False
+claude-4-5-haiku,class,MaxNesting,Max Nesting,0.0006978102850193605,0.024765400746108522,Negligible,↓,2.0,2.0,1.7354990346680097,1.771426173088223,False,True
+claude-4-5-haiku,class,RatioCommentToCode,Comment to Code Ratio,0.8658831245720986,0.0012604040532282056,Negligible,↓,0.23,0.23,0.365594728447914,0.36095022244606734,False,False
+claude-4-5-haiku,class,SumCyclomatic,Sum Cyclomatic Complexity,3.4825416098105546e-13,0.05438159835448767,Negligible,↑,10.0,11.0,17.036682615629985,15.693695962394024,True,True
+claude-4-5-haiku,class,SumCyclomaticModified,Sum Modified Cyclomatic Complexity,3.1727266458876604e-13,0.05447555298029407,Negligible,↑,10.0,11.0,17.03315705531772,15.693695962394024,True,True
+claude-4-5-haiku,class,SumCyclomaticStrict,Sum Strict Cyclomatic Complexity,1.136020877148781e-10,0.04820490964146037,Negligible,↑,10.0,12.0,18.70418870141862,16.792579534961806,True,True
+claude-4-5-haiku,class,SumCyclomaticStrictModified,Sum Strict Modified Cyclomatic Complexity,1.052098958732251e-10,0.04829181802264352,Negligible,↑,10.0,12.0,18.700663141106354,16.792579534961806,True,True
+claude-4-5-haiku,class,SumEssential,Sum Essential Complexity,2.741928563928402e-10,0.047146084554414054,Negligible,↑,6.0,7.0,10.010492739024595,9.463863006799295,True,True
+gpt-3-5,class,AvgCountLine,Average Lines,0.0,-0.5139181968626187,Large,↓,8.0,3.0,9.901536136993201,4.1021573071434565,True,True
+gpt-3-5,class,AvgCountLineBlank,Average Blank Lines,0.0,-0.18460736728984853,Small,↓,0.0,0.0,0.2872492235373122,0.028540250146898347,True,True
+gpt-3-5,class,AvgCountLineCode,Average Code Lines,0.0,-0.567262461176161,Large,↓,6.0,2.0,7.844203810962814,3.0266935280785696,True,True
+gpt-3-5,class,AvgCountLineComment,Average Comment Lines,2.442137823333909e-176,-0.19200069583074902,Small,↓,1.0,0.0,1.8018970872156468,1.0627885503231764,True,True
+gpt-3-5,class,AvgCyclomatic,Average Cyclomatic Complexity,0.0,-0.4781595623363259,Large,↓,2.0,1.0,2.403928481490808,1.1636867287836816,True,True
+gpt-3-5,class,AvgCyclomaticModified,Average Modified Cyclomatic Complexity,0.0,-0.47813700730728687,Large,↓,2.0,1.0,2.403340888105431,1.1636867287836816,True,True
+gpt-3-5,class,AvgCyclomaticStrict,Average Strict Cyclomatic Complexity,0.0,-0.4939696159872075,Large,↓,2.0,1.0,2.6356921010660623,1.2028036598673717,True,True
+gpt-3-5,class,AvgCyclomaticStrictModified,Average Strict Modified Cyclomatic Complexity,0.0,-0.49394570807920085,Large,↓,2.0,1.0,2.635104507680685,1.2028036598673717,True,True
+gpt-3-5,class,AvgEssential,Average Essential Complexity,0.0,-0.22633185984379645,Small,↓,1.0,1.0,1.4109796021153362,1.001427012507345,True,True
+gpt-3-5,class,CountClassBase,Base Classes,0.3654991854377899,0.001931417928700164,Negligible,↓,0.0,0.0,0.028540250146898347,0.030554856039620583,False,False
+gpt-3-5,class,CountClassCoupled,Coupled Classes,0.0,-0.32449639837900013,Small,↓,2.0,1.0,2.6946193234281877,1.2455300931755224,True,True
+gpt-3-5,class,CountClassCoupledModified,Coupled Classes Modified,1.5703682665765783e-60,0.029074721894060993,Negligible,↓,0.0,0.0,0.005036514731805591,0.048854192898514226,True,True
+gpt-3-5,class,CountClassDerived,Derived Classes,0.762995642577785,8.394191219675985e-05,Negligible,↓,0.0,0.0,0.0004197095609837992,0.000503651473180559,False,False
+gpt-3-5,class,CountDeclInstanceMethod,Instance Methods,0.0006410331779320707,0.025434617829201554,Negligible,↓,4.0,4.0,5.863594392680265,5.95777721816503,True,True
+gpt-3-5,class,CountDeclInstanceVariable,Instance Variables,3.0782619456336827e-140,-0.18446408895167937,Small,↓,2.0,1.0,3.6362796944514395,2.074792243767313,True,True
+gpt-3-5,class,CountDeclMethod,Methods,0.000515165121832119,0.025886866947855514,Negligible,↑,4.0,5.0,6.352639973138588,6.449592881725846,True,True
+gpt-3-5,class,CountDeclMethodAll,All Methods,0.00044035386321464385,0.026199234018248745,Negligible,↑,4.0,5.0,6.356081591538655,6.455720641316209,True,True
+gpt-3-5,class,CountLine,Lines,0.0,-0.32842602558918427,Small,↓,49.0,26.0,83.60908251489968,36.25870897339041,True,True
+gpt-3-5,class,CountLineBlank,Blank Lines,4.445021009802431e-59,-0.12093380159574751,Negligible,↓,6.0,5.0,9.153529757407874,6.4945018047511125,True,True
+gpt-3-5,class,CountLineCode,Code Lines,0.0,-0.39154128209056216,Medium,↓,32.0,16.0,57.715101150004195,20.56274657936708,True,True
+gpt-3-5,class,CountLineCodeDecl,Declarative Code Lines,0.0,-0.32237717689235657,Small,↓,16.0,10.0,24.103332493914213,11.93704356585243,True,True
+gpt-3-5,class,CountLineCodeExe,Executable Code Lines,0.0,-0.4976672244544373,Large,↓,25.0,9.0,48.72064131620918,11.724418702258037,True,True
+gpt-3-5,class,CountLineComment,Comment Lines,2.448183107134044e-215,-0.23243793109320957,Small,↓,6.0,2.0,16.845966591118945,9.247964408629228,True,True
+gpt-3-5,class,CountStmt,Statements,0.0,-0.40978378394032466,Medium,↓,30.0,14.0,54.135650130109966,18.60488541928985,True,True
+gpt-3-5,class,CountStmtDecl,Declarative Statements,0.0,-0.3383492518921052,Medium,↓,14.0,9.0,22.26576009401494,10.587509443465121,True,True
+gpt-3-5,class,CountStmtExe,Executable Statements,0.0,-0.5081541573734627,Large,↓,24.0,8.0,46.51145807101486,11.074288592294133,True,True
+gpt-3-5,class,MaxCyclomatic,Max Cyclomatic Complexity,0.0,-0.5215139217340774,Large,↓,4.0,1.0,5.216654075379837,1.6091664568118862,True,True
+gpt-3-5,class,MaxCyclomaticModified,Max Modified Cyclomatic Complexity,0.0,-0.5214639215822309,Large,↓,4.0,1.0,5.2148073533115085,1.6091664568118862,True,True
+gpt-3-5,class,MaxCyclomaticStrict,Max Strict Cyclomatic Complexity,0.0,-0.5271812585620239,Large,↓,4.0,1.0,5.9456056408965,1.7124150088139007,True,True
+gpt-3-5,class,MaxCyclomaticStrictModified,Max Strict Modified Cyclomatic Complexity,0.0,-0.5271276859641534,Large,↓,4.0,1.0,5.943758918828171,1.7124150088139007,True,True
+gpt-3-5,class,MaxEssential,Max Essential Complexity,0.0,-0.3192445222265296,Small,↓,1.0,1.0,2.845882649206749,1.1547049441786283,True,True
+gpt-3-5,class,MaxInheritanceTree,Max Inheritance Tree,0.36424357394606544,0.0019364771323396564,Negligible,↓,0.0,0.0,0.027784772937127507,0.030135146478636785,False,False
+gpt-3-5,class,MaxNesting,Max Nesting,0.0,-0.5272281795049701,Large,↓,2.0,0.0,1.7354990346680097,0.47435574582388984,True,True
+gpt-3-5,class,RatioCommentToCode,Comment to Code Ratio,0.0003189156791383592,-0.026758050540584718,Negligible,↓,0.23,0.2,0.365594728447914,0.5552102744900529,True,True
+gpt-3-5,class,SumCyclomatic,Sum Cyclomatic Complexity,2.1038201907893302e-265,-0.2600174469244618,Small,↓,10.0,6.0,17.036682615629985,7.601191975153194,True,True
+gpt-3-5,class,SumCyclomaticModified,Sum Modified Cyclomatic Complexity,3.39207645459396e-265,-0.25991492406519356,Small,↓,10.0,6.0,17.03315705531772,7.601191975153194,True,True
+gpt-3-5,class,SumCyclomaticStrict,Sum Strict Cyclomatic Complexity,1.7217118405822897e-303,-0.2782184323009042,Small,↓,10.0,6.0,18.70418870141862,7.7610173759758245,True,True
+gpt-3-5,class,SumCyclomaticStrictModified,Sum Strict Modified Cyclomatic Complexity,2.7356814617482254e-303,-0.278125520519302,Small,↓,10.0,6.0,18.700663141106354,7.7610173759758245,True,True
+gpt-3-5,class,SumEssential,Sum Essential Complexity,1.536579898045562e-51,-0.1127213259786605,Negligible,↓,6.0,5.0,10.010492739024595,6.772097708385797,True,True
+gpt-oss,class,AvgCountLine,Average Lines,1.3215376049959e-215,0.23415653834179836,Small,↑,8.0,10.0,9.901536136993201,12.635188449592881,True,True
+gpt-oss,class,AvgCountLineBlank,Average Blank Lines,1.4369498648611845e-267,0.21176091649489157,Small,↓,0.0,0.0,0.2872492235373122,0.7552253840342483,True,True
+gpt-oss,class,AvgCountLineCode,Average Code Lines,1.3455418369212427e-43,0.10328748954980267,Negligible,↑,6.0,7.0,7.844203810962814,8.061193653991438,True,True
+gpt-oss,class,AvgCountLineComment,Average Comment Lines,0.0,0.4205814844322139,Medium,↑,1.0,3.0,1.8018970872156468,3.9281457231595738,True,True
+gpt-oss,class,AvgCyclomatic,Average Cyclomatic Complexity,0.00012160756184490495,0.02777393581289695,Negligible,↓,2.0,2.0,2.403928481490808,2.3144464030890624,True,True
+gpt-oss,class,AvgCyclomaticModified,Average Modified Cyclomatic Complexity,0.00011214809648404116,0.027916840700101055,Negligible,↓,2.0,2.0,2.403340888105431,2.3144464030890624,True,True
+gpt-oss,class,AvgCyclomaticStrict,Average Strict Cyclomatic Complexity,2.7581689729396067e-05,0.030481152320861404,Negligible,↓,2.0,2.0,2.6356921010660623,2.5097792327709225,True,True
+gpt-oss,class,AvgCyclomaticStrictModified,Average Strict Modified Cyclomatic Complexity,2.5364132719285323e-05,0.030618758432108824,Negligible,↓,2.0,2.0,2.635104507680685,2.5097792327709225,True,True
+gpt-oss,class,AvgEssential,Average Essential Complexity,1.7574674737269133e-51,0.09815479357888975,Negligible,↓,1.0,1.0,1.4109796021153362,1.5541845043230085,True,True
+gpt-oss,class,CountClassBase,Base Classes,2.1539751805885028e-05,0.00965487712268912,Negligible,↓,0.0,0.0,0.028540250146898347,0.038529337698312766,True,True
+gpt-oss,class,CountClassCoupled,Coupled Classes,9.936764630998277e-214,0.23135323924215132,Small,↑,2.0,3.0,2.6946193234281877,3.625367245865861,True,True
+gpt-oss,class,CountClassCoupledModified,Coupled Classes Modified,0.0,0.12468485582844463,Negligible,↓,0.0,0.0,0.005036514731805591,0.29043901620078905,True,True
+gpt-oss,class,CountClassDerived,Derived Classes,0.762995642577785,8.394191219675985e-05,Negligible,↓,0.0,0.0,0.0004197095609837992,0.000503651473180559,False,False
+gpt-oss,class,CountDeclInstanceMethod,Instance Methods,3.5059037170553316e-51,0.11217946272088805,Negligible,↑,4.0,5.0,5.863594392680265,6.5613195668597335,True,True
+gpt-oss,class,CountDeclInstanceVariable,Instance Variables,0.5058600034290157,0.004909041120326401,Negligible,↓,2.0,2.0,3.6362796944514395,3.2297490136825315,False,False
+gpt-oss,class,CountDeclMethod,Methods,8.368932113180415e-70,0.1316663102323824,Negligible,↑,4.0,5.0,6.352639973138588,7.181566356081592,True,True
+gpt-oss,class,CountDeclMethodAll,All Methods,4.231156270874113e-71,0.13291738505772943,Negligible,↑,4.0,5.0,6.356081591538655,7.214891295223705,True,True
+gpt-oss,class,CountLine,Lines,7.68299923395956e-204,0.22789709148567103,Small,↑,49.0,77.0,83.60908251489968,92.6064803156216,True,True
+gpt-oss,class,CountLineBlank,Blank Lines,2.3861652575279093e-207,0.22956276029840536,Small,↑,6.0,9.0,9.153529757407874,10.634516914295308,True,True
+gpt-oss,class,CountLineCode,Code Lines,2.118803137909764e-72,0.13461304973382493,Negligible,↑,32.0,42.0,57.715101150004195,54.77016704440527,True,True
+gpt-oss,class,CountLineCodeDecl,Declarative Code Lines,4.9154738866933074e-45,0.10531088915581473,Negligible,↑,16.0,18.0,24.103332493914213,24.683874758667002,True,True
+gpt-oss,class,CountLineCodeExe,Executable Code Lines,6.500049781982429e-41,0.10019387812543315,Negligible,↑,25.0,32.0,48.72064131620918,41.45521698984303,True,True
+gpt-oss,class,CountLineComment,Comment Lines,0.0,0.41338001808615976,Medium,↑,6.0,22.0,16.845966591118945,27.57567363384538,True,True
+gpt-oss,class,CountStmt,Statements,2.689178869307346e-07,0.038478562459557636,Negligible,↑,30.0,33.0,54.135650130109966,42.6812725593889,True,True
+gpt-oss,class,CountStmtDecl,Declarative Statements,6.791135259995002e-06,0.03365021493265668,Negligible,↑,14.0,15.0,22.26576009401494,19.383278771090406,True,True
+gpt-oss,class,CountStmtExe,Executable Statements,0.0036702146092118183,0.021730710019278596,Negligible,↑,24.0,26.0,46.51145807101486,34.28170905733233,False,True
+gpt-oss,class,MaxCyclomatic,Max Cyclomatic Complexity,6.0732688299228884e-12,0.05114468040697052,Negligible,↓,4.0,4.0,5.216654075379837,4.538151599093427,True,True
+gpt-oss,class,MaxCyclomaticModified,Max Modified Cyclomatic Complexity,4.898753661590286e-12,0.05137179496366706,Negligible,↓,4.0,4.0,5.2148073533115085,4.538151599093427,True,True
+gpt-oss,class,MaxCyclomaticStrict,Max Strict Cyclomatic Complexity,6.31555253857634e-11,0.04866431774465155,Negligible,↓,4.0,4.0,5.9456056408965,5.030135146478637,True,True
+gpt-oss,class,MaxCyclomaticStrictModified,Max Strict Modified Cyclomatic Complexity,5.139934755770492e-11,0.04889319386250391,Negligible,↓,4.0,4.0,5.943758918828171,5.030135146478637,True,True
+gpt-oss,class,MaxEssential,Max Essential Complexity,4.0479544445442316e-54,0.10913408988720928,Negligible,↑,1.0,3.0,2.845882649206749,2.9583648115504073,True,True
+gpt-oss,class,MaxInheritanceTree,Max Inheritance Tree,2.0869453333066154e-05,0.009670963699163997,Negligible,↓,0.0,0.0,0.027784772937127507,0.038613279610509525,True,True
+gpt-oss,class,MaxNesting,Max Nesting,9.01662550534483e-10,0.04457108378056024,Negligible,↓,2.0,2.0,1.7354990346680097,1.7439771677998825,True,True
+gpt-oss,class,RatioCommentToCode,Comment to Code Ratio,0.0,0.3578185894857107,Medium,↑,0.23,0.5,0.365594728447914,0.6165331990262738,True,True
+gpt-oss,class,SumCyclomatic,Sum Cyclomatic Complexity,1.0299574510151019e-41,0.10115973506092031,Negligible,↑,10.0,12.0,17.036682615629985,15.237135901955847,True,True
+gpt-oss,class,SumCyclomaticModified,Sum Modified Cyclomatic Complexity,8.558742789835503e-42,0.10126143350956766,Negligible,↑,10.0,12.0,17.03315705531772,15.237135901955847,True,True
+gpt-oss,class,SumCyclomaticStrict,Sum Strict Cyclomatic Complexity,6.045327916693873e-40,0.09890451400680339,Negligible,↑,10.0,12.0,18.70418870141862,16.34307059514816,True,True
+gpt-oss,class,SumCyclomaticStrictModified,Sum Strict Modified Cyclomatic Complexity,5.1115117029986415e-40,0.09899877162112858,Negligible,↑,10.0,12.0,18.700663141106354,16.34307059514816,True,True
+gpt-oss,class,SumEssential,Sum Essential Complexity,8.017552758967917e-87,0.14753495340730635,Small,↑,6.0,8.0,10.010492739024595,10.353227566523966,True,True

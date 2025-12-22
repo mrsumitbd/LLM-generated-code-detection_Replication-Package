@@ -1,0 +1,5 @@
+Model,Function_Features,Class_Features,Overlap_Count,Jaccard,Interpretation
+Claude 3 Haiku,6,12,2,0.125,Negligible
+Claude 4.5 Haiku,6,10,1,0.06666666666666667,Negligible
+GPT-3.5,6,11,2,0.13333333333333333,Negligible
+GPT-OSS,6,9,1,0.07142857142857142,Negligible

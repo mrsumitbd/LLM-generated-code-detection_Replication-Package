@@ -1,0 +1,62 @@
+from .calculations import try_get_value
+
+class TCL_SplitAC_DeviceData:
+    def __init__(self, device_id: str, aws_thing_state: dict, delta: dict) -> None:
+        self.device_id = device_id
+        self.power_switch               = int(try_get_value(delta, aws_thing_state, "powerSwitch", -1))
+        self.beep_switch                = int(try_get_value(delta, aws_thing_state, "beepSwitch", -1))
+        self.screen                     = int(try_get_value(delta, aws_thing_state, "screen", -1))
+        self.target_temperature         = int(try_get_value(delta, aws_thing_state, "targetTemperature", -1))
+        self.current_temperature        = int(try_get_value(delta, aws_thing_state, "currentTemperature", -1))
+        self.work_mode                  = int(try_get_value(delta, aws_thing_state, "workMode", -1))
+        self.high_temperature_wind      = int(try_get_value(delta, aws_thing_state, "highTemperatureWind", -1))
+        self.turbo                      = int(try_get_value(delta, aws_thing_state, "turbo", -1))
+        self.silence_switch             = int(try_get_value(delta, aws_thing_state, "silenceSwitch", -1))
+        self.wind_speed                 = int(try_get_value(delta, aws_thing_state, "windSpeed", -1))
+        self.vertical_switch            = int(try_get_value(delta, aws_thing_state, "verticalSwitch", -1))
+        self.vertical_direction         = int(try_get_value(delta, aws_thing_state, "verticalDirection", -1))
+        self.horizontal_switch          = int(try_get_value(delta, aws_thing_state, "horizontalSwitch", -1))
+        self.horizontal_direction       = int(try_get_value(delta, aws_thing_state, "horizontalDirection", -1))
+        self.eight_add_hot              = int(try_get_value(delta, aws_thing_state, "eightAddHot", -1))
+        self.sleep                      = int(try_get_value(delta, aws_thing_state, "sleep", -1))
+        self.eco                        = int(try_get_value(delta, aws_thing_state, "ECO", -1))
+        self.healthy                    = int(try_get_value(delta, aws_thing_state, "healthy", -1))
+        self.anti_moldew                = int(try_get_value(delta, aws_thing_state, "antiMoldew", -1))
+        self.self_clean                 = int(try_get_value(delta, aws_thing_state, "selfClean", -1))
+        self.wind_speed_auto_switch     = int(try_get_value(delta, aws_thing_state, "windSpeedAutoSwitch", -1))
+        self.wind_speed_7_gear          = int(try_get_value(delta, aws_thing_state, "windSpeed7Gear", -1))
+        self.soft_wind                  = int(try_get_value(delta, aws_thing_state, "softWind", -1))
+        self.ai_eco                     = int(try_get_value(delta, aws_thing_state, "AIECOSwitch", -1))
+        self.external_unit_temperature  = int(try_get_value(delta, aws_thing_state, "externalUnitTemperature", -1))
+        self.generator_mode             = int(try_get_value(delta, aws_thing_state, "generatorMode", -1))
+        self.lower_temperature_limit    = int(try_get_value(delta, aws_thing_state, "lowerTemperatureLimit", 16))
+        self.upper_temperature_limit    = int(try_get_value(delta, aws_thing_state, "upperTemperatureLimit", 36))
+
+    device_id: str
+    power_switch: int | bool
+    beep_switch: int | bool
+    target_temperature: int
+    current_temperature: int
+    high_temperature_wind: int
+    turbo: int
+    silence_switch: int
+    wind_speed: int
+    vertical_switch: int
+    vertical_direction: int
+    horizontal_switch: int
+    horizontal_direction: int
+    sleep: int
+    healthy: int
+    eco: int
+    anti_moldew: int
+    self_clean: int
+    eight_add_hot: int
+    screen: int
+    wind_speed_7_gear: int
+    ai_eco: int
+    wind_speed_auto_switch: int
+    soft_wind: int
+    external_unit_temperature: int
+    generator_mode: int
+    upper_temperature_limit: int
+    lower_temperature_limit: int

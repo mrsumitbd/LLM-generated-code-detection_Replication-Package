@@ -1,0 +1,67 @@
+Model,Model_Name,Granularity,Config,Feature,Feature_Readable,SHAP_Importance,Rank
+claude-3-haiku,Claude 3 Haiku,Function,claude-3-haiku_Function,RatioCommentToCode,Comment-to-Code Ratio,0.3368595134673449,1
+claude-3-haiku,Claude 3 Haiku,Function,claude-3-haiku_Function,CountLineBlank,Blank Lines,0.2892038577197059,2
+claude-3-haiku,Claude 3 Haiku,Function,claude-3-haiku_Function,CountStmtDecl,Declarative Statements,0.18981707121665398,3
+claude-3-haiku,Claude 3 Haiku,Function,claude-3-haiku_Function,CountPathLog,Logarithmic Paths,0.12815331952689998,4
+claude-3-haiku,Claude 3 Haiku,Function,claude-3-haiku_Function,MaxNesting,Maximum Nesting Depth,0.10515223052658565,5
+claude-3-haiku,Claude 3 Haiku,Function,claude-3-haiku_Function,Essential,Essential Complexity,0.09336846413552491,6
+claude-3-haiku,Claude 3 Haiku,Class,claude-3-haiku_Class,AvgCountLineCode,Average Code Lines,0.602897732257098,1
+claude-3-haiku,Claude 3 Haiku,Class,claude-3-haiku_Class,CountClassCoupledModified,Modified Coupled Classes,0.33651855775530887,2
+claude-3-haiku,Claude 3 Haiku,Class,claude-3-haiku_Class,AvgCountLineComment,Average Comment Lines,0.3165091245235271,3
+claude-3-haiku,Claude 3 Haiku,Class,claude-3-haiku_Class,MaxNesting,Maximum Nesting Depth,0.27319185475274466,4
+claude-3-haiku,Claude 3 Haiku,Class,claude-3-haiku_Class,AvgCountLineBlank,Average Blank Lines,0.2670440093704842,5
+claude-3-haiku,Claude 3 Haiku,Class,claude-3-haiku_Class,CountDeclInstanceMethod,Instance Methods,0.2615367569422353,6
+claude-3-haiku,Claude 3 Haiku,Class,claude-3-haiku_Class,CountClassCoupled,Coupled Classes,0.22791037298424227,7
+claude-3-haiku,Claude 3 Haiku,Class,claude-3-haiku_Class,RatioCommentToCode,Comment-to-Code Ratio,0.22439742017239614,8
+claude-3-haiku,Claude 3 Haiku,Class,claude-3-haiku_Class,CountDeclInstanceVariable,Instance Variables,0.1095917282512145,9
+claude-3-haiku,Claude 3 Haiku,Class,claude-3-haiku_Class,AvgEssential,Average Essential Complexity,0.08310267265794151,10
+claude-3-haiku,Claude 3 Haiku,Class,claude-3-haiku_Class,CountClassBase,Base Classes,0.015290564149647098,11
+claude-3-haiku,Claude 3 Haiku,Class,claude-3-haiku_Class,CountClassDerived,Derived Classes,0.0013106826704328872,12
+claude-4-5-haiku,Claude 4.5 Haiku,Function,claude-4-5-haiku_Function,CountStmtDecl,Declarative Statements,0.6198883942609456,1
+claude-4-5-haiku,Claude 4.5 Haiku,Function,claude-4-5-haiku_Function,CountLineComment,Comment Lines,0.3838561113898389,2
+claude-4-5-haiku,Claude 4.5 Haiku,Function,claude-4-5-haiku_Function,RatioCommentToCode,Comment-to-Code Ratio,0.17776134453564388,3
+claude-4-5-haiku,Claude 4.5 Haiku,Function,claude-4-5-haiku_Function,MaxNesting,Maximum Nesting Depth,0.11808960611796977,4
+claude-4-5-haiku,Claude 4.5 Haiku,Function,claude-4-5-haiku_Function,CountPathLog,Logarithmic Paths,0.11196180127001079,5
+claude-4-5-haiku,Claude 4.5 Haiku,Function,claude-4-5-haiku_Function,Essential,Essential Complexity,0.09763865258212756,6
+claude-4-5-haiku,Claude 4.5 Haiku,Class,claude-4-5-haiku_Class,AvgCountLineBlank,Average Blank Lines,1.8065154519609494,1
+claude-4-5-haiku,Claude 4.5 Haiku,Class,claude-4-5-haiku_Class,AvgCountLineComment,Average Comment Lines,0.7265461630448606,2
+claude-4-5-haiku,Claude 4.5 Haiku,Class,claude-4-5-haiku_Class,RatioCommentToCode,Comment-to-Code Ratio,0.2771500488442077,3
+claude-4-5-haiku,Claude 4.5 Haiku,Class,claude-4-5-haiku_Class,CountDeclInstanceMethod,Instance Methods,0.2652916269198104,4
+claude-4-5-haiku,Claude 4.5 Haiku,Class,claude-4-5-haiku_Class,AvgEssential,Average Essential Complexity,0.2290675265293039,5
+claude-4-5-haiku,Claude 4.5 Haiku,Class,claude-4-5-haiku_Class,CountClassCoupled,Coupled Classes,0.21727766078026373,6
+claude-4-5-haiku,Claude 4.5 Haiku,Class,claude-4-5-haiku_Class,CountDeclInstanceVariable,Instance Variables,0.11605044577338443,7
+claude-4-5-haiku,Claude 4.5 Haiku,Class,claude-4-5-haiku_Class,CountClassCoupledModified,Modified Coupled Classes,0.08074934645198167,8
+claude-4-5-haiku,Claude 4.5 Haiku,Class,claude-4-5-haiku_Class,CountClassBase,Base Classes,0.015339938255049104,9
+claude-4-5-haiku,Claude 4.5 Haiku,Class,claude-4-5-haiku_Class,CountClassDerived,Derived Classes,0.000349329603024801,10
+gpt-3-5,GPT-3.5,Function,gpt-3-5_Function,RatioCommentToCode,Comment-to-Code Ratio,3.7945848578690655,1
+gpt-3-5,GPT-3.5,Function,gpt-3-5_Function,MaxNesting,Maximum Nesting Depth,0.7030246065297122,2
+gpt-3-5,GPT-3.5,Function,gpt-3-5_Function,CountLineCodeDecl,Declarative Code Lines,0.6309439958708755,3
+gpt-3-5,GPT-3.5,Function,gpt-3-5_Function,CountLineBlank,Blank Lines,0.34215366796438645,4
+gpt-3-5,GPT-3.5,Function,gpt-3-5_Function,CountPathLog,Logarithmic Paths,0.2776570801226874,5
+gpt-3-5,GPT-3.5,Function,gpt-3-5_Function,Essential,Essential Complexity,0.13166313099241045,6
+gpt-3-5,GPT-3.5,Class,gpt-3-5_Class,MaxNesting,Maximum Nesting Depth,1.034343658456889,1
+gpt-3-5,GPT-3.5,Class,gpt-3-5_Class,AvgCountLineComment,Average Comment Lines,0.7397627528854034,2
+gpt-3-5,GPT-3.5,Class,gpt-3-5_Class,RatioCommentToCode,Comment-to-Code Ratio,0.5361144758546031,3
+gpt-3-5,GPT-3.5,Class,gpt-3-5_Class,CountClassCoupled,Coupled Classes,0.44515945972744075,4
+gpt-3-5,GPT-3.5,Class,gpt-3-5_Class,CountDeclInstanceMethod,Instance Methods,0.4176943691966154,5
+gpt-3-5,GPT-3.5,Class,gpt-3-5_Class,AvgCountLineBlank,Average Blank Lines,0.377704101137619,6
+gpt-3-5,GPT-3.5,Class,gpt-3-5_Class,CountDeclInstanceVariable,Instance Variables,0.32528804090926794,7
+gpt-3-5,GPT-3.5,Class,gpt-3-5_Class,AvgEssential,Average Essential Complexity,0.2991938105389451,8
+gpt-3-5,GPT-3.5,Class,gpt-3-5_Class,CountClassCoupledModified,Modified Coupled Classes,0.09394497689686374,9
+gpt-3-5,GPT-3.5,Class,gpt-3-5_Class,CountClassBase,Base Classes,0.01456654801045395,10
+gpt-3-5,GPT-3.5,Class,gpt-3-5_Class,CountClassDerived,Derived Classes,0.00035708617088686006,11
+gpt-oss,GPT-OSS,Function,gpt-oss_Function,CountLineComment,Comment Lines,0.565799584223301,1
+gpt-oss,GPT-OSS,Function,gpt-oss_Function,Essential,Essential Complexity,0.4213469619182812,2
+gpt-oss,GPT-OSS,Function,gpt-oss_Function,RatioCommentToCode,Comment-to-Code Ratio,0.32161554209041404,3
+gpt-oss,GPT-OSS,Function,gpt-oss_Function,CountStmtDecl,Declarative Statements,0.18608936962576517,4
+gpt-oss,GPT-OSS,Function,gpt-oss_Function,MaxNesting,Maximum Nesting Depth,0.17362253015680215,5
+gpt-oss,GPT-OSS,Function,gpt-oss_Function,CountPathLog,Logarithmic Paths,0.1611193209524428,6
+gpt-oss,GPT-OSS,Class,gpt-oss_Class,RatioCommentToCode,Comment-to-Code Ratio,0.5501754997240147,1
+gpt-oss,GPT-OSS,Class,gpt-oss_Class,CountClassCoupledModified,Modified Coupled Classes,0.469510645767133,2
+gpt-oss,GPT-OSS,Class,gpt-oss_Class,AvgCountLineBlank,Average Blank Lines,0.3595370507205444,3
+gpt-oss,GPT-OSS,Class,gpt-oss_Class,CountClassCoupled,Coupled Classes,0.29087073518290646,4
+gpt-oss,GPT-OSS,Class,gpt-oss_Class,CountDeclInstanceMethod,Instance Methods,0.2513788492046217,5
+gpt-oss,GPT-OSS,Class,gpt-oss_Class,CountDeclInstanceVariable,Instance Variables,0.22204811523558862,6
+gpt-oss,GPT-OSS,Class,gpt-oss_Class,AvgEssential,Average Essential Complexity,0.20140133457186243,7
+gpt-oss,GPT-OSS,Class,gpt-oss_Class,CountClassBase,Base Classes,0.04660139331953563,8
+gpt-oss,GPT-OSS,Class,gpt-oss_Class,CountClassDerived,Derived Classes,0.00011836527308581589,9

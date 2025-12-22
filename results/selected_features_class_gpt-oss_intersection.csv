@@ -1,0 +1,10 @@
+feature
+CountClassCoupled
+CountClassDerived
+AvgCountLineBlank
+CountClassCoupledModified
+CountClassBase
+RatioCommentToCode
+AvgEssential
+CountDeclInstanceMethod
+CountDeclInstanceVariable

@@ -1,0 +1,21 @@
+def kernel_all2all_pull_intra_node_nvl(
+    gemm_out_ptr,
+    gemm_barrier_ptr,
+    cum_seqlen_cpu_tuple,
+    cum_seqlen_gpu_ptr,
+    q_out_ptr,
+    k_out_ptr,
+    v_out_ptr,
+    sp_size,
+    rank,
+    sp_rank,
+    qkv_out_features,
+    head_dim,
+    gqa,
+    BLOCK_SIZE_M,
+    BLOCK_SIZE_N,
+    NUM_COMM_SMS,
+    HAS_KV=1,
+    NEED_BARRIER=1,
+):
+    pass

@@ -1,0 +1,7 @@
+feature
+Essential
+CountLineBlank
+CountStmtDecl
+CountPathLog
+RatioCommentToCode
+MaxNesting

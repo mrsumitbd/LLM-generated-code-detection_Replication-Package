@@ -1,0 +1,2 @@
+def _get_function_output_type(function: Function, tool_execution_config: dict[str, ToolExecutionConfig]) -> type:
+    return type(function(*[tool_execution_config[arg] for arg in function.__code__.co_varnames[:function.__code__.co_argcount]]))

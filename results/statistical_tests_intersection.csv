@@ -1,0 +1,3 @@
+Test,Comparison,Statistic,P-value,Effect_Size,Interpretation
+Mann-Whitney U,Function vs Class (All Features),544.0,0.5985225986906094,0.23130723393853025,Small
+Permutation Test,RatioCommentToCode: Function vs Class,0.7607459533418117,0.8285714285714286,2.916432833679002,2.9x higher at function-level

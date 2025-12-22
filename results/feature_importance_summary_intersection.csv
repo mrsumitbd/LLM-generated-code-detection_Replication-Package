@@ -1,0 +1,19 @@
+Feature,Feature_Readable,Frequency,Percentage,Avg_Importance,Max_Importance,Top3_Count,Configs
+RatioCommentToCode,Comment-to-Code Ratio,8,100%,0.7773323378197112,3.7945848578690655,7,"claude-3-haiku_Function, claude-3-haiku_Class, claude-4-5-haiku_Function, claude-4-5-haiku_Class, gpt-3-5_Function, gpt-3-5_Class, gpt-oss_Function, gpt-oss_Class"
+AvgCountLineBlank,Average Blank Lines,4,50%,0.7027001532973993,1.8065154519609494,2,"claude-3-haiku_Class, claude-4-5-haiku_Class, gpt-3-5_Class, gpt-oss_Class"
+CountLineCodeDecl,Declarative Code Lines,1,12%,0.6309439958708755,0.6309439958708755,1,gpt-3-5_Function
+AvgCountLineCode,Average Code Lines,1,12%,0.602897732257098,0.602897732257098,1,claude-3-haiku_Class
+AvgCountLineComment,Average Comment Lines,3,38%,0.5942726801512637,0.7397627528854034,3,"claude-3-haiku_Class, claude-4-5-haiku_Class, gpt-3-5_Class"
+CountLineComment,Comment Lines,2,25%,0.47482784780656995,0.565799584223301,2,"claude-4-5-haiku_Function, gpt-oss_Function"
+MaxNesting,Maximum Nesting Depth,6,75%,0.40123741442345057,1.034343658456889,2,"claude-3-haiku_Function, claude-3-haiku_Class, claude-4-5-haiku_Function, gpt-3-5_Function, gpt-3-5_Class, gpt-oss_Function"
+CountStmtDecl,Declarative Statements,3,38%,0.33193161170112156,0.6198883942609456,2,"claude-3-haiku_Function, claude-4-5-haiku_Function, gpt-oss_Function"
+CountLineBlank,Blank Lines,2,25%,0.3156787628420462,0.34215366796438645,1,"claude-3-haiku_Function, gpt-3-5_Function"
+CountDeclInstanceMethod,Instance Methods,4,50%,0.2989754005658207,0.4176943691966154,0,"claude-3-haiku_Class, claude-4-5-haiku_Class, gpt-3-5_Class, gpt-oss_Class"
+CountClassCoupled,Coupled Classes,4,50%,0.2953045571687133,0.44515945972744075,0,"claude-3-haiku_Class, claude-4-5-haiku_Class, gpt-3-5_Class, gpt-oss_Class"
+CountClassCoupledModified,Modified Coupled Classes,4,50%,0.24518088171782182,0.469510645767133,2,"claude-3-haiku_Class, claude-4-5-haiku_Class, gpt-3-5_Class, gpt-oss_Class"
+AvgEssential,Average Essential Complexity,4,50%,0.20319133607451323,0.2991938105389451,0,"claude-3-haiku_Class, claude-4-5-haiku_Class, gpt-3-5_Class, gpt-oss_Class"
+CountDeclInstanceVariable,Instance Variables,4,50%,0.19324458254236387,0.32528804090926794,0,"claude-3-haiku_Class, claude-4-5-haiku_Class, gpt-3-5_Class, gpt-oss_Class"
+Essential,Essential Complexity,4,50%,0.18600430240708604,0.4213469619182812,1,"claude-3-haiku_Function, claude-4-5-haiku_Function, gpt-3-5_Function, gpt-oss_Function"
+CountPathLog,Logarithmic Paths,4,50%,0.16972288046801026,0.2776570801226874,0,"claude-3-haiku_Function, claude-4-5-haiku_Function, gpt-3-5_Function, gpt-oss_Function"
+CountClassBase,Base Classes,4,50%,0.022949610933671448,0.04660139331953563,0,"claude-3-haiku_Class, claude-4-5-haiku_Class, gpt-3-5_Class, gpt-oss_Class"
+CountClassDerived,Derived Classes,4,50%,0.000533865929357591,0.0013106826704328872,0,"claude-3-haiku_Class, claude-4-5-haiku_Class, gpt-3-5_Class, gpt-oss_Class"

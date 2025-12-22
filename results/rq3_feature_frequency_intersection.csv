@@ -1,0 +1,19 @@
+Feature,Technical_Name,Frequency,Percentage
+Comment-to-Code Ratio,RatioCommentToCode,8,100%
+Maximum Nesting Depth,MaxNesting,6,75%
+Average Blank Lines,AvgCountLineBlank,4,50%
+Average Essential Complexity,AvgEssential,4,50%
+Base Classes,CountClassBase,4,50%
+Coupled Classes,CountClassCoupled,4,50%
+Modified Coupled Classes,CountClassCoupledModified,4,50%
+Derived Classes,CountClassDerived,4,50%
+Instance Methods,CountDeclInstanceMethod,4,50%
+Instance Variables,CountDeclInstanceVariable,4,50%
+Logarithmic Paths,CountPathLog,4,50%
+Essential Complexity,Essential,4,50%
+Average Comment Lines,AvgCountLineComment,3,38%
+Declarative Statements,CountStmtDecl,3,38%
+Blank Lines,CountLineBlank,2,25%
+Comment Lines,CountLineComment,2,25%
+Average Code Lines,AvgCountLineCode,1,12%
+Declarative Code Lines,CountLineCodeDecl,1,12%

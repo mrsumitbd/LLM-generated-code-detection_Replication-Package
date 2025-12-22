@@ -1,0 +1,2 @@
+def get_role_binding_events(path, context, namespace, role_binding_name):
+    return f"Getting role binding events for path: {path}, context: {context}, namespace: {namespace}, role binding name: {role_binding_name}"

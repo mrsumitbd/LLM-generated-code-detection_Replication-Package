@@ -1,0 +1,9 @@
+Config,SHAP_Importance,Model,Granularity
+claude-3-haiku_Function,0.3368595134673449,claude-3-haiku,Function
+claude-3-haiku_Class,0.22439742017239614,claude-3-haiku,Class
+claude-4-5-haiku_Function,0.17776134453564388,claude-4-5-haiku,Function
+claude-4-5-haiku_Class,0.2771500488442077,claude-4-5-haiku,Class
+gpt-3-5_Function,3.7945848578690655,gpt-3-5,Function
+gpt-3-5_Class,0.5361144758546031,gpt-3-5,Class
+gpt-oss_Function,0.32161554209041404,gpt-oss,Function
+gpt-oss_Class,0.5501754997240147,gpt-oss,Class
