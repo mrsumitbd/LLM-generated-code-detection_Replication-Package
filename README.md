@@ -20,6 +20,72 @@ This replication package enables full reproduction of our experimental results, 
 - Feature importance and overlap analysis (RQ3)
 - Validation on contamination-free datasets
 
+## Directory Tree
+```
+LLM-generated-code-detection_Replication-Package/
+├── README.md                           # Main documentation
+├── LICENSE                             # MIT License
+├── CITATION.cff                        # Citation metadata
+├── requirements.txt                    # Python dependencies
+├── verify_package.py                   # Verification script
+├── PACKAGE_CONTENTS.md                 # This file
+│
+├── data/                               # ~780 MB
+│   ├── README.md
+│   ├── LLM_generated_contents_intersection/    # 10 CSV files, ~780 MB
+│   ├── features_for_ML/                        # 7,083 CSV files, ~50 MB
+│   │   ├── class_global_intersection/
+│   │   ├── function_global_intersection/
+│   │   └── uncontaminated/
+│   ├── trained_ML_models/                      # 8 .pkl files, ~9 MB
+│   ├── data_for_ML_validation/                 # 8 CSV files, ~1.5 MB
+│   ├── uncontaminated_intersection_keys_class.txt     # 46 KB
+│   └── uncontaminated_intersection_keys_function.txt  # 69 KB
+│
+├── src/                                # ~200 KB
+│   ├── README.md
+│   ├── batch_generate_with_anthropicai.py      # Code generation
+│   ├── batch_generation_with_openai.py
+│   ├── generation_with_togetherai.py
+│   ├── prepare_for_understand.py               # Feature extraction prep
+│   ├── model_training.py                       # CatBoost training
+│   ├── rq1_statistical_analysis.py             # RQ1 analysis
+│   ├── rq2_delong_test.py                      # RQ2 DeLong test
+│   ├── rq3_feature_overlap_analysis.py         # RQ3 overlap analysis
+│   ├── shap_analysis.py                        # SHAP computation
+│   ├── prediction_on_uncontaminated_data.py    # Validation
+│   ├── uncontaminated_intersection_analysis.py
+│   └── utility.py                              # Helper functions
+│
+├── results/                            # ~600 KB
+│   ├── README.md
+│   ├── model_performance_*.csv                 # 8 files, ~368 KB
+│   ├── bootstrap_results_*.csv                 # 8 files, ~4.4 KB
+│   ├── selected_features_*.csv                 # 8 files, ~1.5 KB
+│   ├── rq1_statistical_results_detailed_intersection.csv   # 36 KB
+│   ├── rq1_summary_counts_intersection.csv     # 311 B
+│   ├── delong_test_results_intersection.csv    # 1.9 KB
+│   ├── shap_values_all_configs_intersection.csv            # 7.1 KB
+│   ├── feature_importance_summary_intersection.csv         # 2.9 KB
+│   ├── feature_rankings_all_configs_intersection.csv       # 7.4 KB
+│   ├── model_importance_statistics_intersection.csv        # 559 B
+│   ├── statistical_tests_intersection.csv      # 301 B
+│   ├── ratiocommenttocode_analysis_intersection.csv        # 508 B
+│   ├── rq3_*_intersection.csv                  # 5 files, ~2 KB
+│   └── uncontaminated_validation_results.csv   # 1.0 KB
+│
+└── figures/                            # ~1.2 MB
+    ├── README.md
+    ├── *_shap_beeswarm_intersection.pdf        # 8 files, ~900 KB
+    ├── *_ranking.pdf                           # 8 files, ~52 KB
+    ├── rq2_confusion_matrices.pdf              # 28 KB
+    ├── rq2_roc_curves.pdf                      # 97 KB
+    ├── rq3_feature_frequency_intersection.pdf  # 33 KB
+    ├── rq3_feature_overlap_heatmaps_intersection.pdf       # 28 KB
+    ├── feature_importance_heatmap_intersection.pdf         # 36 KB
+    └── feature_importance_heatmap_top10_intersection.pdf   # 31 KB
+```
+
 
 ## Research Questions
 
