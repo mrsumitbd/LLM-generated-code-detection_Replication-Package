@@ -5,8 +5,11 @@ This repository contains the complete replication package for our paper on detec
 ## Paper Information
 
 **Title:** Automatic Detection of LLM-Generated Code: A Comparative Case Study of Contemporary Models Across Function and Class Granularities
+
 **Authors:** Musfiqur Rahman, SayedHassan Khatoonabadi, Ahmad Abdellatif, Emad Shihab  
-**Venue:** [Submitted to EMSE]  
+
+**Venue:** Submitted to EMSE
+
 **Year:** 2025
 
 ## Overview
