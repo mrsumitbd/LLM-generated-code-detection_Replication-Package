@@ -10,7 +10,7 @@ Get up and running with the replication package in 5 minutes.
 
 ## Step 1: Clone/Download the Repository
 ```bash
-git clone [your-repo-url]
+git clone https://github.com/mrsumitbd/LLM-generated-code-detection_Replication-Package.git
 cd LLM-generated-code-detection_Replication-Package
 ```
 
@@ -212,8 +212,6 @@ python src/rq3_feature_overlap_analysis.py
 ## Getting Help
 
 - **Documentation:** See README files in each directory
-- **Issues:** [GitHub Issues URL]
-- **Email:** [Your Email]
 - **Verification:** Run `python verify_package.py` to check setup
 
 ## Typical Workflows
@@ -289,4 +287,4 @@ You've successfully set up the package when:
 
 ---
 
-**Questions?** Check the main README.md or contact [Your Email]
+**Questions?** Check the main README.md or contact musfiqur.rahman@mail.concordia.ca

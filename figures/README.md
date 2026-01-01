@@ -352,12 +352,6 @@ All figures follow accessibility best practices:
 - Text alternatives provided in captions
 - Multiple encoding channels (color + shape + position)
 
----
-
-## Contact
-
-For questions about figure generation or customization: [Your email]
-
 ## Software Used
 
 - **Python 3.8+** with matplotlib, seaborn

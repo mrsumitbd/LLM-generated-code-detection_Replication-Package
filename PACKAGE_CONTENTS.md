@@ -231,6 +231,5 @@ Please cite our paper when using this package:
 
 ---
 
-**Package prepared by:** [Your Name]  
-**Date:** 2025-01-22  
-**For questions:** [Your Email]
+**Package prepared by:** Musfiqur Rahman  
+**Date:** 2025-12-22

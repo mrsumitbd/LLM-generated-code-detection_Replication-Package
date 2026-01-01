@@ -462,14 +462,3 @@ done
 # - 1 rq1_detailed: 456 rows
 # - 1 shap_values: 456 rows
 ```
-
----
-
-## Citation
-
-When using these results, please cite our paper:
-[Your citation]
-
-## Contact
-
-For questions about specific result files: [Your email]

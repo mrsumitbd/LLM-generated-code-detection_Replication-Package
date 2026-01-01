@@ -443,9 +443,3 @@ pip install -r ../requirements.txt
 - SHAP analysis: 15-30 minutes
 
 **Total:** ~8-12 hours for full pipeline (or ~1 hour using provided data)
-
----
-
-## Contact
-
-For script-specific questions or issues, please refer to inline documentation or contact [your email].
