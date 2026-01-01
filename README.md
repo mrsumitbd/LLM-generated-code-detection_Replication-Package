@@ -107,9 +107,9 @@ If you use this replication package, please cite our paper:
 
 ## License
 
-[Specify license - e.g., MIT, Apache 2.0]
+MIT
 
-The original CodeSearchNet dataset is licensed under [original license].
+The original CodeSearchNet dataset is licensed under MIT.
 
 ## Contact
 
